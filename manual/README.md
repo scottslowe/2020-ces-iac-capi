@@ -1,4 +1,4 @@
-# Manual Cluster API-IaC Integration
+# Manual IaC-Cluster API Integration
 
 This directory provides a rudimentary example of manual integration between infrastructure-as-code implemented with Pulumi and Cluster API (CAPI).
 
