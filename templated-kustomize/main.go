@@ -72,9 +72,9 @@ func main() {
 			log.Panicf("error creating output file: %s", err.Error())
 		}
 		t := template.Must(template.New(v).ParseFiles(v))
-		err2 := t.Execute(f, info)
-		if err2 != nil {
-			log.Panicf("error rendering template: %s", err2.Error())
+		err = t.Execute(f, info)
+		if err != nil {
+			log.Panicf("error rendering template: %s", err.Error())
 		}
 	}
 
@@ -95,8 +95,8 @@ func main() {
 
 	stdoutStreamer := optup.ProgressStreams(os.Stdout)
 
-	_, err3 := destStack.Up(ctx, stdoutStreamer)
-	if err3 != nil {
-		log.Printf("failed to refresh stack: %s", err3.Error())
+	_, err = destStack.Up(ctx, stdoutStreamer)
+	if err != nil {
+		log.Printf("failed to refresh stack: %s", err.Error())
 	}
 }
