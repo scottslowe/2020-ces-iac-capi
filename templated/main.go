@@ -22,7 +22,7 @@ func main() {
 	// Set up context and stack and get outputs
 	ctx := context.Background()
 	stackName := auto.FullyQualifiedStackName("scottslowe", "capa-full-byoi", "cesdemo")
-	stack, _ := auto.SelectStackLocalSource(ctx, stackName, filepath.Join("../..", "capa-full-byoi"))
+	stack, _ := auto.SelectStackLocalSource(ctx, stackName, filepath.Join("../../../../Sync/Projects", "capa-full-byoi"))
 	values, _ := stack.Outputs(ctx)
 
 	// Set up a variable of type IaaSData
@@ -69,8 +69,8 @@ func main() {
 
 	// Render the template
 	tmpl := template.Must(template.New("cesdemo.tmpl").ParseFiles(templateFiles...))
-	err2 := tmpl.Execute(f, info)
-	if err2 != nil {
+	err = tmpl.Execute(f, info)
+	if err != nil {
 		log.Panicf("error rendering template: %s", err.Error())
 	}
 }
