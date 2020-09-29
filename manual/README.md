@@ -19,3 +19,5 @@ The `manual.sh` script illustrates one way to automate this level of integration
 * Similarly, the `PUBFIELD` and `PRIVFIELD` variables should contain the names of the exported variables that contain the subnet IDs you want to use.
 
 The script assumes that the Pulumi stack created subnets in four AZs. If your region or Pulumi stack contains more or less AZs, you'll need to adjust the script accordingly.
+
+The `kustomization.yaml` file is here for use in the templated Kustomize example; see [the README for that example](../templated-kustomize/README.md) for more details. It is not used for this example.
